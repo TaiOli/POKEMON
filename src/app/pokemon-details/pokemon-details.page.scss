@@ -1,0 +1,111 @@
+.nav {
+    cursor: pointer;
+}
+
+.stat-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.stat-bar-small {
+    width: 45%;
+    height: 35px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+
+.stat-bar-container-small {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.pokemon {
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.stat-bar-item {
+    flex: 1;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    padding-left: 10px;
+}
+
+.stat-bar-fill-small {
+    height: 100%;
+    border-radius: 5px;
+    color: white;
+    padding-top: 8px;
+}
+
+.card {
+    width: 100%;
+}
+
+.attack-bar {
+    background-color: #f44c3c;
+}
+
+.defense-bar {
+    background-color: #15c474;
+}
+
+.speed-bar {
+    background-color: #fc844c;
+}
+
+.height-bar {
+    background-color: #53c3e3;
+}
+
+.weight-bar {
+    background-color: #bc7ccc;
+}
+
+.category-bar {
+    background-color: #9bcb53;
+}
+
+.abilities-bar {
+    background-color: #f464bc;
+}
+
+.space {
+    margin-top: 50px;
+}
+
+.text {
+    text-align: left;
+}
+
+.pokemon-card {
+    margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-button {
+    --background: #15c474;
+}
+
+.stat-bar-label {
+    font-weight: bold;
+
+}

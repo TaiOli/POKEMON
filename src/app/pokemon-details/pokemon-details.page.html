@@ -1,0 +1,110 @@
+<!-- Cabeçalho que navega para a página inicial ao ser clicado -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="nav" (click)="goToHomePage()">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Informações do Pokémon -->
+  <ion-card class="pokemon-card">
+    <ion-card-header>
+      <ion-card-title class="text">{{ pokemonData[currentPage].name }} - {{ pokemonData[currentPage].number
+        }}</ion-card-title>
+    </ion-card-header>
+
+    <!-- Detalhes do Pokémon -->
+    <ion-card-content class="card">
+      <div class="row">
+        <!-- Imagem do Pokémon -->
+        <div>
+          <ion-img class="pokemon" [src]="pokemonData[currentPage].image"
+            [alt]="pokemonData[currentPage].name"></ion-img>
+        </div>
+        <!-- Descrição-->
+        <div class="col-md-10">
+          <p>{{ pokemonData[currentPage].description }}</p>
+        </div>
+
+        <!-- Estatísticas-->
+        <div class="col-md-12 space">
+          <div class="stat-bar-label">Ataque:</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill attack-bar" [style.width.%]="pokemonData[currentPage].stats.attack">{{
+              pokemonData[currentPage].stats.attack }}</div>
+          </div>
+          <div class="stat-bar-label">Defesa:</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill defense-bar" [style.width.%]="pokemonData[currentPage].stats.defense">{{
+              pokemonData[currentPage].stats.defense }}</div>
+          </div>
+          <div class="stat-bar-label">Velocidade:</div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill speed-bar" [style.width.%]="pokemonData[currentPage].stats.speed">{{
+              pokemonData[currentPage].stats.speed }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row space">
+        <div class="col-md-8">
+          <div class="stat-bar-container-small">
+            <div class="stat-bar-item">
+              <div class="stat-bar-label">Altura:</div>
+              <div class="stat-bar-small">
+                <div class="stat-bar-fill-small height-bar" [style.width.%]="pokemonData[currentPage].stats.height">{{
+                  pokemonData[currentPage].stats.height }}</div>
+              </div>
+            </div>
+            <div class="stat-bar-item">
+              <div class="stat-bar-label">Peso:</div>
+              <div class="stat-bar-small">
+                <div class="stat-bar-fill-small weight-bar" [style.width.%]="pokemonData[currentPage].stats.weight">{{
+                  pokemonData[currentPage].stats.weight }}</div>
+              </div>
+            </div>
+            <div class="stat-bar-item">
+              <div class="stat-bar-label">Categoria:</div>
+              <div class="stat-bar-small">
+                <div class="stat-bar-fill-small category-bar" [style.width.%]="pokemonData[currentPage].stats.category">
+                  {{ pokemonData[currentPage].stats.category }}</div>
+              </div>
+            </div>
+
+            <div class="stat-bar-item">
+              <div class="stat-bar-label">Habilidades:</div>
+              <div class="stat-bar-small">
+                <div class="stat-bar-fill-small abilities-bar"
+                  [style.width.%]="pokemonData[currentPage].stats.abilities">{{ pokemonData[currentPage].stats.abilities
+                  }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tipos e Fraquezas -->
+      <div class="row space">
+        <div class="col-md-12">
+          <p><strong>Tipos:</strong>
+            <span *ngFor="let type of pokemonData[currentPage].types">
+              {{ type }};
+            </span>
+          </p>
+          <p><strong>Fraquezas:</strong>
+            <span *ngFor="let weakness of pokemonData[currentPage].weaknesses">
+              {{ weakness }};
+            </span>
+          </p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <!-- Botões de Páginação -->
+  <div class="pagination">
+    <ion-button class="pagination-button" (click)="prevPage()">Anterior</ion-button>
+    <ion-button class="pagination-button" (click)="nextPage()">Próxima</ion-button>
+  </div>
+</ion-content>

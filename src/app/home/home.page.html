@@ -1,20 +1,28 @@
+<!-- Cabeçalho da página direcionando para a mesma -->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="nav" (click)="goToHomePage()">
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+ <!-- Card Pokémon -->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card *ngIf="pokemon" class="card">
+      <ion-card-header>
+        <!-- Nome do Pokémon -->
+        <ion-card-title class="pokemon-name">{{ pokemon.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="content">
+         <!-- Imagem do Pokémon -->
+        <img [src]="pokemon.sprites.front_default" alt="Imagem do Pokémon">
+        <div>
+           <!-- Botão direcionando para página de detalhes sobre o Pokémon -->
+          <ion-button class="btnDetails" (click)="goToDetailsPage()">Detalhes</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
