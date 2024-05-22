@@ -8,9 +8,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PokemonDetails } from './pokemon-details/pokemon-details.page';
 
+
 @NgModule({
   declarations: [AppComponent,PokemonDetails],
-  imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule, NgxPaginationModule],
+  imports: [BrowserModule,IonicModule.forRoot(),HttpClientModule, AppRoutingModule, NgxPaginationModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

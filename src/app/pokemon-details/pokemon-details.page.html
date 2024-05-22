@@ -1,11 +1,19 @@
 <!-- Cabeçalho que navega para a página inicial ao ser clicado -->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="nav" (click)="goToHomePage()">
-      Home
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHomePage()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToFavoritesPage()">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
   <!-- Informações do Pokémon -->
@@ -18,6 +26,14 @@
     <!-- Detalhes do Pokémon -->
     <ion-card-content class="card">
       <div class="row">
+
+        <div class="favorite-container">
+          <span class="favorite-text">Favoritar</span>
+          <ion-button class="favorite" (click)="toggleFavorite(pokemonData[currentPage].name)">
+            <ion-icon [name]="pokemonData[currentPage].isFavorite ? 'star' : 'star-outline'"></ion-icon>
+          </ion-button>
+        </div>
+
         <!-- Imagem do Pokémon -->
         <div>
           <ion-img class="pokemon" [src]="pokemonData[currentPage].image"

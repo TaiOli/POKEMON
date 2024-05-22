@@ -1,16 +1,23 @@
 <!-- Cabeçalho da página direcionando para a mesma -->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="nav" (click)="goToHomePage()">
-      Home
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHomePage()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToFavoritesPage()">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
  <!-- Card Pokémon -->
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-card *ngIf="pokemon" class="card">
+    <ion-card *ngIf="pokemon">
       <ion-card-header>
         <!-- Nome do Pokémon -->
         <ion-card-title class="pokemon-name">{{ pokemon.name }}</ion-card-title>

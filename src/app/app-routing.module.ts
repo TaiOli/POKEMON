@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PokemonDetails } from './pokemon-details/pokemon-details.page';
+import { PokemonFavoritesPage } from './pokemon-favorites/pokemon-favorites.page';
 
 const routes: Routes = [
   {
@@ -12,9 +13,17 @@ const routes: Routes = [
     component: PokemonDetails
   },
   {
+    path: 'pokemon-favorites',
+    component: PokemonFavoritesPage
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'pokemon-favorites',
+    loadChildren: () => import('./pokemon-favorites/pokemon-favorites.module').then( m => m.PokemonFavoritesPageModule)
   },
 ];
 

@@ -1,7 +1,3 @@
-.nav {
-    cursor: pointer;
-}
-
 .stat-bar {
     width: 80%;
     height: 20px;
@@ -107,5 +103,20 @@
 
 .stat-bar-label {
     font-weight: bold;
+}
 
+.favorite {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    --background: #53c3e3;
+    --color: #f4dc3c;
+}
+
+.favorite-container {
+    position: absolute;
+    right: 16px;
+    padding-right: 5px;
+    font-weight: bold;
+    color: grey;
 }

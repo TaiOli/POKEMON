@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-pokemon-details',
@@ -11,11 +12,28 @@ import { HttpClient } from '@angular/common/http';
 export class PokemonDetails {
 
   // Armazena os detalhes dos Pokémons
-  pokemon: any[] = [];
+  pokemon: any = {};
   // Página atual do Pokémon sendo exibido
   currentPage: number = 0;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  //Array de favoritos
+  favoritePokemons: string[] = [];
+
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {
+    //Carrega os pokémons favoritos armazenamento local
+    const storedFavorites = localStorage.getItem('favoritePokemons');
+    if (storedFavorites) {
+      this.favoritePokemons = JSON.parse(storedFavorites);
+    }
+  }
+
+  // Atualiza a lista de pokémons favoritos ao entrar na página
+  ionViewWillEnter() {
+    const storedFavorites = localStorage.getItem('favoritePokemons');
+    if (storedFavorites) {
+      this.favoritePokemons = JSON.parse(storedFavorites);
+    }
+  }
 
   // Dados dos Pokémons
   pokemonData = [
@@ -34,7 +52,8 @@ export class PokemonDetails {
       },
       types: ['Grama', 'Tóxico'],
       weaknesses: ['Fogo', 'Gelo', 'Vôo', 'Psíquico'],
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+      isFavorite: false
     },
     {
       name: 'Ivysaur',
@@ -51,7 +70,8 @@ export class PokemonDetails {
       },
       types: ['Grama', 'Tóxico'],
       weaknesses: ['Fogo', 'Gelo', 'Vôo', 'Psíquico'],
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png'
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png',
+      isFavorite: false
     },
     {
       name: 'Venusaur',
@@ -68,13 +88,19 @@ export class PokemonDetails {
       },
       types: ['Grama', 'Tóxico'],
       weaknesses: ['Fogo', 'Gelo', 'Vôo', 'Psíquico'],
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png'
-    }
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
+      isFavorite: false
+    },
   ];
 
   // Navega para a página inicial
   goToHomePage() {
     this.router.navigateByUrl('/home', { state: { pokemon: this.pokemon } });
+  }
+
+  // Navega para a página de favoritos
+  goToFavoritesPage() {
+    this.router.navigateByUrl('/pokemon-favorites');
   }
 
   // Avança para a próxima página
@@ -87,4 +113,12 @@ export class PokemonDetails {
     this.currentPage = (this.currentPage - 1 + this.pokemonData.length) % this.pokemonData.length;
   }
 
+  // Adiciona ou remove um pokémon dos favoritos 
+  toggleFavorite(pokemonName: string) {
+    if (!this.favoritePokemons.includes(pokemonName)) {
+      this.favoritePokemons.push(pokemonName);
+      localStorage.setItem('favoritePokemons', JSON.stringify(this.favoritePokemons));
+    }
+    this.router.navigate(['/pokemon-favorites']);
+  }
 }

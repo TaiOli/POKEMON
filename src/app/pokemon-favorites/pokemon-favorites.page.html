@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHomePage()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToFavoritesPage()">
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Pokémons favoritados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="favoritePokemons.length > 0; else noFavorites">
+    <ion-item *ngFor="let pokemonName of favoritePokemons">
+      <ion-label>{{ pokemonName }}</ion-label>
+      <ion-button color="danger" (click)="removeFavorite(pokemonName)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ng-template #noFavorites>
+    <ion-text color="medium">Nenhum Pokémon favoritado.</ion-text>
+  </ng-template>
+</ion-content>
