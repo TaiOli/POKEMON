@@ -34,6 +34,6 @@ export class HomePage {
 
   // Navega para a página de favoritos
   goToFavoritesPage(){
-    this.router.navigateByUrl('/pokemon-favorites');
+    this.router.navigateByUrl('/pokemon-favorites', { state: { pokemon: this.pokemon } });
   }
 }

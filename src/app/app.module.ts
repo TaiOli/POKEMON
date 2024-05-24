@@ -12,7 +12,7 @@ import { PokemonDetails } from './pokemon-details/pokemon-details.page';
 @NgModule({
   declarations: [AppComponent,PokemonDetails],
   imports: [BrowserModule,IonicModule.forRoot(),HttpClientModule, AppRoutingModule, NgxPaginationModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })
 
