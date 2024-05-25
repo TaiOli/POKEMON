@@ -49,7 +49,28 @@ describe('PokemonDetails', () => {
     expect(localStorage.getItem('favoritePokemons')).toEqual(JSON.stringify([pokemonName]));
   });
 
-  // Verifica se após a adição ou remoção de um Pokémon direciona para página favoritos.
+  //Verifica se isFavorite retorna true quando o pokémon está na lista de favoritos.
+  describe('isFavorite', () => {
+    it('Retornar true se o Pokémon estiver na lista de favoritos', () => {
+      const pokemonName = 'Pikachu';
+  
+      component.favoritePokemons = [pokemonName];
+  
+      expect(component.isFavorite(pokemonName)).toBe(true);
+    });
+  });
+
+  //Verifica se isFavorite retorna false quando o pokémon não está na lista de favoritos
+  it('Retornar false se o pokémon não estiver na lista de favoritos', () => {
+    const pokemonName = 'Charmander';
+  
+    component.favoritePokemons = ['Pikachu'];
+
+    expect(component.isFavorite(pokemonName)).toBe(false);
+  });
+
+
+  // Verifica se após a adição de um Pokémon direciona para página favoritos.
   it('Direcionamento para página de favoritos', () => {
     const navigateSpy = spyOn(router, 'navigate');
 

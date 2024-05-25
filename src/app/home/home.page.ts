@@ -24,6 +24,7 @@ export class HomePage {
 
   // Navega para a página detalhes do pokémon
   goToDetailsPage() {
+    console.log('Botão clicado');
     this.router.navigateByUrl('/pokemon-details', { state: { pokemon: this.pokemon } });
   }
 
