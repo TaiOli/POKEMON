@@ -1,24 +1,31 @@
+<!-- Cabeçalho da página -->
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!--Botão direcionando para a página inicial-->
     <ion-buttons slot="start">
       <ion-button (click)="goToHomePage()">
-        <ion-icon slot="icon-only" name="home"></ion-icon>
+        <ion-icon slot="icon-only" class="icon" name="home"></ion-icon>
       </ion-button>
+      <span>Início</span>
     </ion-buttons>
+    <!--Botão direcionando para página de favoritos-->
     <ion-buttons slot="end">
+      <span>Favoritos</span>
       <ion-button (click)="goToFavoritesPage()">
-        <ion-icon slot="icon-only" name="star"></ion-icon>
+        <ion-icon slot="icon-only" class="icon" name="star"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<!--Título da lista de favoritos-->
 <ion-header>
   <ion-toolbar>
     <ion-title class="title"> Lista Favoritos</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!--Exibição da lista de favoritos com botão para exclusão-->
 <ion-content>
   <ion-list *ngIf="favoritePokemons.length > 0; else noFavorites">
     <ion-item *ngFor="let pokemonName of favoritePokemons">
@@ -28,6 +35,7 @@
       </ion-button>
     </ion-item>
   </ion-list>
+  <!--Mensagem caso não exista pokémons favoritados-->
   <ng-template #noFavorites>
     <ion-text id="caption" color="medium">Nenhum Pokémon favoritado.</ion-text>
   </ng-template>

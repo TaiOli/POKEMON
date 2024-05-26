@@ -1,32 +1,42 @@
-<!-- Cabeçalho da página direcionando para a mesma -->
+<!-- Cabeçalho da página -->
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!--Botão direcionando para a mesma -> Página inicial-->
     <ion-buttons slot="start">
       <ion-button (click)="goToHomePage()">
-        <ion-icon slot="icon-only" name="home"></ion-icon>
+        <ion-icon slot="icon-only" class="icon" name="home"></ion-icon>
       </ion-button>
+      <span>Início</span>
     </ion-buttons>
+    <!--Botão direcionando para página de favoritos-->
     <ion-buttons slot="end">
+      <span>Favoritos</span>
       <ion-button (click)="goToFavoritesPage()">
-        <ion-icon slot="icon-only" name="star"></ion-icon>
+        <ion-icon slot="icon-only" class="icon" name="star"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
- <!-- Card Pokémon -->
-<ion-content [fullscreen]="true">
+<!-- Card Pokémon -->
+<ion-content [fullscreen]="true" class="content-background">
+  <!--Título da página inicial com um ícone pokebola-->
+  <h1 class="pokedex-title">
+    Pokédex
+    <img src="assets/imgs/pokemon.png" alt="Ícone pokebola">
+  </h1>
   <div id="container">
-    <ion-card *ngIf="pokemon">
+    <ion-card *ngIf="pokemon" class="card-small">
       <ion-card-header>
         <!-- Nome do Pokémon -->
-        <ion-card-title class="pokemon-name">{{ pokemon.name }}</ion-card-title>
+        <ion-card-title class="pokemon-name">{{ pokemon.name }} <span class="pokemon-number"> - Nº
+            #1</span></ion-card-title>
       </ion-card-header>
       <ion-card-content class="content">
-         <!-- Imagem do Pokémon -->
+        <!-- Imagem do Pokémon -->
         <img [src]="pokemon.sprites.front_default" alt="Imagem do Pokémon">
         <div>
-           <!-- Botão direcionando para página de detalhes sobre o Pokémon -->
+          <!-- Botão direcionando para página de detalhes sobre o Pokémon -->
           <ion-button class="btnDetails" (click)="goToDetailsPage()">Detalhes</ion-button>
         </div>
       </ion-card-content>

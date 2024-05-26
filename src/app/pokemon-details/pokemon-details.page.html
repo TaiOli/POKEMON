@@ -1,14 +1,18 @@
-<!-- Cabeçalho que navega para a página inicial ao ser clicado -->
+<!-- Cabeçalho da página -->
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!--Botão direcionando para a página inicial-->
     <ion-buttons slot="start">
       <ion-button (click)="goToHomePage()">
-        <ion-icon slot="icon-only" name="home"></ion-icon>
+        <ion-icon slot="icon-only" class="icon" name="home"></ion-icon>
       </ion-button>
+      <span>Início</span>
     </ion-buttons>
+    <!--Botão direcionando para página de favoritos-->
     <ion-buttons slot="end">
+      <span>Favoritos</span>
       <ion-button (click)="goToFavoritesPage()">
-        <ion-icon slot="icon-only" name="star"></ion-icon>
+        <ion-icon slot="icon-only" class="icon" name="star"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -18,21 +22,24 @@
   <!-- Informações do Pokémon -->
   <ion-card *ngIf="pokemonData && pokemonData[currentPage]" class="pokemon-card">
     <ion-card-header>
-      <ion-card-title class="text">{{ pokemonData[currentPage]?.name }} - {{ pokemonData[currentPage]?.number }}</ion-card-title>
+      <ion-card-title class="text">{{ pokemonData[currentPage]?.name }} - {{ pokemonData[currentPage]?.number
+        }}</ion-card-title>
     </ion-card-header>
 
     <!-- Detalhes do Pokémon -->
     <ion-card-content class="card">
       <div class="row">
 
+        <!-- Botão favoritos-->
         <div class="favorite-container">
-          <ion-button (click)="toggleFavorite(pokemonData[currentPage].name)"  class="favorite">
-            <ion-icon  [name]="isFavorite(pokemonData[currentPage].name) ? 'star' : 'star-outline'"></ion-icon>
+          <ion-button (click)="toggleFavorite(pokemonData[currentPage].name)" class="favorite">
+            <ion-icon [name]="isFavorite(pokemonData[currentPage].name) ? 'star' : 'star-outline'"></ion-icon>
           </ion-button>
         </div>
         <!-- Imagem do Pokémon -->
         <div>
-          <ion-img class="pokemon" [src]="pokemonData[currentPage].image" [alt]="pokemonData[currentPage].name"></ion-img>
+          <ion-img class="pokemon" [src]="pokemonData[currentPage].image"
+            [alt]="pokemonData[currentPage].name"></ion-img>
         </div>
         <!-- Descrição-->
         <div class="col-md-10">
@@ -43,15 +50,18 @@
         <div class="col-md-12 space">
           <div class="stat-bar-label">Ataque:</div>
           <div class="stat-bar">
-            <div class="stat-bar-fill attack-bar" [style.width.%]="pokemonData[currentPage].stats.attack">{{ pokemonData[currentPage].stats.attack }}</div>
+            <div class="stat-bar-fill attack-bar" [style.width.%]="pokemonData[currentPage].stats.attack">{{
+              pokemonData[currentPage].stats.attack }}</div>
           </div>
           <div class="stat-bar-label">Defesa:</div>
           <div class="stat-bar">
-            <div class="stat-bar-fill defense-bar" [style.width.%]="pokemonData[currentPage].stats.defense">{{ pokemonData[currentPage].stats.defense }}</div>
+            <div class="stat-bar-fill defense-bar" [style.width.%]="pokemonData[currentPage].stats.defense">{{
+              pokemonData[currentPage].stats.defense }}</div>
           </div>
           <div class="stat-bar-label">Velocidade:</div>
           <div class="stat-bar">
-            <div class="stat-bar-fill speed-bar" [style.width.%]="pokemonData[currentPage].stats.speed">{{ pokemonData[currentPage].stats.speed }}</div>
+            <div class="stat-bar-fill speed-bar" [style.width.%]="pokemonData[currentPage].stats.speed">{{
+              pokemonData[currentPage].stats.speed }}</div>
           </div>
         </div>
 
@@ -60,26 +70,31 @@
             <div class="stat-bar-item">
               <div class="stat-bar-label">Altura:</div>
               <div class="stat-bar-small">
-                <div class="stat-bar-fill-small height-bar" [style.width.%]="pokemonData[currentPage].stats.height">{{ pokemonData[currentPage].stats.height }}</div>
+                <div class="stat-bar-fill-small height-bar" [style.width.%]="pokemonData[currentPage].stats.height">{{
+                  pokemonData[currentPage].stats.height }}</div>
               </div>
             </div>
             <div class="stat-bar-item">
               <div class="stat-bar-label">Peso:</div>
               <div class="stat-bar-small">
-                <div class="stat-bar-fill-small weight-bar" [style.width.%]="pokemonData[currentPage].stats.weight">{{ pokemonData[currentPage].stats.weight }}</div>
+                <div class="stat-bar-fill-small weight-bar" [style.width.%]="pokemonData[currentPage].stats.weight">{{
+                  pokemonData[currentPage].stats.weight }}</div>
               </div>
             </div>
             <div class="stat-bar-item">
               <div class="stat-bar-label">Categoria:</div>
               <div class="stat-bar-small">
-                <div class="stat-bar-fill-small category-bar" [style.width.%]="pokemonData[currentPage].stats.category">{{ pokemonData[currentPage].stats.category }}</div>
+                <div class="stat-bar-fill-small category-bar" [style.width.%]="pokemonData[currentPage].stats.category">
+                  {{ pokemonData[currentPage].stats.category }}</div>
               </div>
             </div>
 
             <div class="stat-bar-item">
               <div class="stat-bar-label">Habilidades:</div>
               <div class="stat-bar-small">
-                <div class="stat-bar-fill-small abilities-bar" [style.width.%]="pokemonData[currentPage].stats.abilities">{{ pokemonData[currentPage].stats.abilities }}</div>
+                <div class="stat-bar-fill-small abilities-bar"
+                  [style.width.%]="pokemonData[currentPage].stats.abilities">{{ pokemonData[currentPage].stats.abilities
+                  }}</div>
               </div>
             </div>
           </div>
