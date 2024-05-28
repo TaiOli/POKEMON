@@ -116,9 +116,18 @@
 .favorite {
     position: absolute;
     right: 16px;
-    top: 16px;
+    margin-top:-22px;
     --background: #53c3e3;
     --color: #f4dc3c;
+}
+
+// Responsividade para dispositivos móveis,
+// tablets menores e smartphones
+
+@media screen and (max-width: 768px) {
+    .favorite {
+        margin-top: -40px; 
+    }
 }
 
 .favorite-container {
