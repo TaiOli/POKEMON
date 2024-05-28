@@ -36,7 +36,7 @@ Botão detalhes para acessar as características do Pokémon
 
 ![Botão detalhes](src/assets/imgs/btn-details.png)
 
-![Navegando detalhes](src/assets/gif/page-details-tutorial.gif)
+![Navegando detalhes](src/assets/gifs/page-details-tutorial.gif)
 
 ### Página Detalhes
 
@@ -54,7 +54,7 @@ Possui um botão para favoritar o Pokémon.
 
 ![Botão favoritos](src/assets/imgs/btn-favorites.png)
 
-![Navegando favoritos](src/assets/gif/page-details-tutorial.gif)
+![Navegando favoritos](src/assets/gifs/page-details-tutorial.gif)
 
 
 - Botão páginação
@@ -71,7 +71,7 @@ Essas imagens mostram a navegação na página de detalhes do Pokémon.
 
 ![Navegando em Detalhes Página três](src/assets/imgs/details-pagethree.png)
 
-![Navegando páginas](src/assets/gif/navigation-tutorial.gif)
+![Navegando páginas](src/assets/gifs/navigation-tutorial.gif)
 
 ### Página Favoritos
 
@@ -87,7 +87,7 @@ Quando o usuário desejar remover um Pokémon de sua lista de favoritos
 
 ![Botão excluir](src/assets/imgs/btn-excluir.png)
 
-![Removendo favoritos](src/assets/gif/remove-favorites-tutorial.gif)
+![Removendo favoritos](src/assets/gifs/remove-favorites-tutorial.gif)
 
 ## Tecnologias Utilizadas
 
