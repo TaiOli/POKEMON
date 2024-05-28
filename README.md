@@ -22,21 +22,21 @@ Este projeto segue o estilo de codificação padrão da comunidade [Angular](htt
 
 - Tela Início
 
-![Tela Início](assets/imgs/home.png)
+![Tela Início](src/assets/imgs/home.png)
 
 - Menu navegação
 
 No menu, há a opção de acessar a lista de favoritos.
 
-![Menu navegação](assets/imgs/navbar.png)
+![Menu navegação](src/assets/imgs/navbar.png)
 
 - Botão detalhes
 
 Botão detalhes para acessar as características do Pokémon
 
-![Botão detalhes](assets/imgs/btn-details.png)
+![Botão detalhes](src/assets/imgs/btn-details.png)
 
-![Navegando detalhes](assets/gif/page-details-tutorial.gif)
+![Navegando detalhes](src/assets/gif/page-details-tutorial.gif)
 
 ### Página Detalhes
 
@@ -46,32 +46,32 @@ Botão detalhes para acessar as características do Pokémon
 
 - Tela Detalhes
 
-![Tela Detalhes](assets/imgs/pokemon-details.png)
+![Tela Detalhes](src/assets/imgs/pokemon-details.png)
 
 - Botão favoritos
 
 Possui um botão para favoritar o Pokémon.
 
-![Botão favoritos](assets/imgs/btn-favorites.png)
+![Botão favoritos](src/assets/imgs/btn-favorites.png)
 
-![Navegando favoritos](assets/gif/page-details-tutorial.gif)
+![Navegando favoritos](src/assets/gif/page-details-tutorial.gif)
 
 
 - Botão páginação
 
 Botões de navegação no rodapé da página podendo acompanhar a evolução do pokémon
 
-![Botão páginação](assets/imgs/btn-navigation.png)
+![Botão páginação](src/assets/imgs/btn-navigation.png)
 
 - Navegação 
 
 Essas imagens mostram a navegação na página de detalhes do Pokémon.
 
-![Navegando em Detalhes Página dois](assets/imgs/details-pagetwo.png)
+![Navegando em Detalhes Página dois](src/assets/imgs/details-pagetwo.png)
 
-![Navegando em Detalhes Página três](assets/imgs/details-pagethree.png)
+![Navegando em Detalhes Página três](src/assets/imgs/details-pagethree.png)
 
-![Navegando páginas](assets/gif/navigation-tutorial.gif)
+![Navegando páginas](src/assets/gif/navigation-tutorial.gif)
 
 ### Página Favoritos
 
@@ -79,15 +79,15 @@ Essas imagens mostram a navegação na página de detalhes do Pokémon.
 
 - Tela Favoritos
 
-![Tela Favoritos](assets/imgs/page-favorites.png)
+![Tela Favoritos](src/assets/imgs/page-favorites.png)
 
 - Botão excluir
 
 Quando o usuário desejar remover um Pokémon de sua lista de favoritos
 
-![Botão excluir](assets/imgs/btn-excluir.png)
+![Botão excluir](src/assets/imgs/btn-excluir.png)
 
-![Removendo favoritos](assets/gif/remove-favorites-tutorial.gif)
+![Removendo favoritos](src/assets/gif/remove-favorites-tutorial.gif)
 
 ## Tecnologias Utilizadas
 
