@@ -105,7 +105,9 @@ Quando o usuário desejar remover um Pokémon de sua lista de favoritos
 
 ## Testes Unitários
 
-[![Jasmine](https://img.shields.io/badge/Jasmine-5.1.0-brightgreen.svg)] [![Karma](https://img.shields.io/badge/Karma-6.4.0-orange.svg)]
+![Jasmine](https://img.shields.io/badge/Jasmine-5.1.0-brightgreen.svg) ![Karma](https://img.shields.io/badge/Karma-6.4.0-orange.svg)
+
+![Test](src/assets/imgs/tests.png)
 
 O projeto inclui testes unitários para garantir a qualidade do código.
 Os testes são escritos utilizando o framework de testes Jasmine e são executados com o auxílio do Karma.
